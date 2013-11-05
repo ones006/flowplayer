@@ -74,6 +74,14 @@ cd ./flowplayer # this repository
 make flash
 ```
 
+## Running tests
+
+Tests are run on [BrowserStack](http://browserstack.com)
+
+ * Install dependencies: `bundle install`
+ * Setup broserstack tunnel: `java -jar features/support/BrowserStackTunnel.jar -f <your tunnel api key> /path/to/flowplayer/repo`
+ * Run cucumber features: `rake username=<browserstack username> key=<broserstack automate api key> base_url=http://<something>.browserstack.com`
+
 ## License
 
 [GPL v3 with an ADDITIONAL TERM per GPL Section 7](LICENSE.md)
