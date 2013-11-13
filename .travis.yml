@@ -1,7 +1,7 @@
 language: ruby
 before_script:
 - npm install -g stylus
-- npm install nnarhinen/node-flex-sdk && cd node_modules/flex-sdk && npm install && npm install -g
+- npm install nnarhinen/node-flex-sdk && cd node_modules/flex-sdk && npm install && npm install -g && cd ../../
 - make
 - make skins
 - make flash
