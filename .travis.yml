@@ -1,14 +1,12 @@
 language: ruby
 before_script:
-- npm install -g stylus browserstack-cli
+- npm install -g stylus
 - npm install -g https://s3-us-west-2.amazonaws.com/nnarhinen.flowplayer/flex-sdk-4.8.0.tgz
 - git clone https://github.com/nexussays/playerglobal.git
 - make
 - make skins
 - PLAYERGLOBAL_HOME="$(pwd)/playerglobal" make flash
-- python -m SimpleHTTPServer &
-- sleep 3
-- browserstack tunnel -k $key localhost:8000 &
+- ./features/support/setup-tunnel.bash &
 - sleep 3
 env:
   global:
