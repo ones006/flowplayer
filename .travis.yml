@@ -1,10 +1,11 @@
 language: ruby
 before_script:
 - npm install -g stylus
-- npm install nnarhinen/node-flex-sdk && cd node_modules/flex-sdk && npm install && npm install -g && cd ../../
+- npm install -g https://s3-us-west-2.amazonaws.com/nnarhinen.flowplayer/flex-sdk-4.8.0.tgz
+- git clone https://github.com/nexussays/playerglobal.git
 - make
 - make skins
-- make flash
+- PLAYERGLOBAL_HOME=playerglobal make flash
 - ./features/support/setup-tunnel.bash
 - sleep 3
 env:
