@@ -6,9 +6,9 @@ before_script:
 - make
 - make skins
 - PLAYERGLOBAL_HOME="$(pwd)/playerglobal" make flash
-- python -m SimpleHTTPServer
+- python -m SimpleHTTPServer &
 - sleep 3
-- browserstack tunnel -k $key localhost:8000
+- browserstack tunnel -k $key localhost:8000 &
 - sleep 3
 env:
   global:
