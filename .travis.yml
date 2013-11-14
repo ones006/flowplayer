@@ -5,7 +5,7 @@ before_script:
 - git clone https://github.com/nexussays/playerglobal.git
 - make
 - make skins
-- PLAYERGLOBAL_HOME=playerglobal make flash
+- PLAYERGLOBAL_HOME="$(pwd)/playerglobal" make flash
 - ./features/support/setup-tunnel.bash
 - sleep 3
 env:
